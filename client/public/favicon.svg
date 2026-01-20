@@ -1,0 +1,26 @@
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient -->
+  <defs>
+    <linearGradient id="visioraGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6D28D9"></stop>
+      <stop offset="50%" stop-color="#EC4899"></stop>
+      <stop offset="100%" stop-color="#F59E0B"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Camera Body -->
+  <rect x="4" y="4" width="48" height="48" rx="14" fill="url(#visioraGradient)"></rect>
+
+  <!-- Camera Lens -->
+  <circle cx="28" cy="30" r="9" stroke="white" stroke-width="3" fill="none"></circle>
+
+  <!-- Sparkle -->
+  <path d="M40 14
+       L42 18
+       L46 20
+       L42 22
+       L40 26
+       L38 22
+       L34 20
+       L38 18 Z" fill="white"></path>
+</svg>
