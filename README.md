@@ -41,8 +41,6 @@ No complicated workflows, no clutter.
 
 ## 🖼️ Sneak Peek
 
-> Replace these with your actual screenshots in `/assets` or `/public`
-
 | Feature | Preview |
 |--------|--------|
 | Hero Section | ![](./assets/hero.png) |
