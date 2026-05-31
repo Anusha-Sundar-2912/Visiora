@@ -43,14 +43,14 @@ No complicated workflows, no clutter.
 
 | Feature | Preview |
 |--------|--------|
-| Hero Section | ![](<img width="1919" height="1055" alt="Screenshot 2026-04-30 232926" src="https://github.com/user-attachments/assets/35f1ba2c-a70b-4f23-9fd1-28ab10ec71f7" />
-) |
-| How it Works | ![](<img width="1897" height="991" alt="Screenshot 2026-04-30 232952" src="https://github.com/user-attachments/assets/36a28d7b-a5a4-4da6-a0d8-7e9c3738a826" />
-) |
-| Generator | ![](<img width="1883" height="890" alt="Screenshot 2026-04-30 233011" src="https://github.com/user-attachments/assets/07091edc-8ab6-4050-b410-fa7d6ce8bfc0" />
-) |
-| Testimonials | ![](<img width="1886" height="1021" alt="Screenshot 2026-04-30 233032" src="https://github.com/user-attachments/assets/0cb0690f-4b6e-46db-b54a-578ce2abb1ca" />
-) |
+| Hero Section | (<img width="1919" height="1055" alt="Screenshot 2026-04-30 232926" src="https://github.com/user-attachments/assets/35f1ba2c-a70b-4f23-9fd1-28ab10ec71f7" />
+|
+| How it Works | (<img width="1897" height="991" alt="Screenshot 2026-04-30 232952" src="https://github.com/user-attachments/assets/36a28d7b-a5a4-4da6-a0d8-7e9c3738a826" />
+|
+| Generator | (<img width="1883" height="890" alt="Screenshot 2026-04-30 233011" src="https://github.com/user-attachments/assets/07091edc-8ab6-4050-b410-fa7d6ce8bfc0" />
+|
+| Testimonials | (<img width="1886" height="1021" alt="Screenshot 2026-04-30 233032" src="https://github.com/user-attachments/assets/0cb0690f-4b6e-46db-b54a-578ce2abb1ca" />
+|
 
 ---
 
