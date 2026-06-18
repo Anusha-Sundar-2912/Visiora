@@ -17,12 +17,39 @@ const Navbar = () => {
             <div>
                 {
                     user
-                        ? <div className='flex items-center gap-2 sm:gap-3'>
+                        ? <div className='flex items-center gap-2'>
                             <button onClick={() => navigate('/buy')} className='flex items-center gap-2 bg-blue-100 px-4 sm:px-6 py-1.5 sm:py-3 rounded-full hover:scale-105 transition-all duration-700'>
                                 <img className='w-5' src={assets.credit_star} alt="" />
                                 <p className='text-xs sm:text-sm font-medium text-gray-600'>Credits left : {credit}</p>
                             </button>
-                            <p className='text-gray-600 max-sm:hidden pl-4'>Hi, {user.name}</p>
+                           <div className='flex items-center gap-4 pl-4'>
+
+<button
+  onClick={() => navigate('/history')}
+  className='flex items-center gap-2 bg-purple-100 px-4 py-2 rounded-full hover:scale-105 transition-all duration-300'
+>
+  📚
+  <span className='text-sm font-medium text-gray-700'>
+    History
+  </span>
+</button>
+
+
+<button
+  onClick={() => navigate('/analytics')}
+  className='flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full hover:scale-105 transition-all duration-300'
+>
+  📊
+  <span className='text-sm font-medium text-gray-700'>
+    Analytics
+  </span>
+</button>
+
+<p className='text-gray-600 max-sm:hidden'>
+  Hi, {user.name}
+</p>
+
+</div>
                             <div className='relative group'>
                                 <img className='w-10 drop-shadow' src={assets.profile_icon} alt="" />
                                 <div className='absolute hidden group-hover:block top-0 right-0 z-10 text-black rounded  pt-12'>

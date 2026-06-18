@@ -12,6 +12,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import Login from './components/Login'
 import { AppContext } from './context/AppContext'
 import Verify from './pages/Verify'
+import History from './pages/History'
+import HistoryDetails from './pages/HistoryDetails'
+import Analytics from './pages/Analytics'
+import Storyboard from './pages/Storyboard'
 
 const App = () => {
 
@@ -27,6 +31,10 @@ const App = () => {
         <Route path='/result' element={<Result />} />
         <Route path='/buy' element={<BuyCredit />} />
         <Route path='/verify' element={<Verify />} />
+        <Route path='/history' element={<History />} />
+        <Route path='/history/:id' element={<HistoryDetails />} />
+        <Route path='/analytics' element={<Analytics />} />
+        <Route path='/storyboard' element={<Storyboard />} />
       </Routes>
       <Footer />
     </div>
