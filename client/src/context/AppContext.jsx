@@ -31,43 +31,65 @@ const AppContextProvider = (props) => {
     }
   }
 
-  // 🧠 Prompt Enhancement Engine (Gemini / LLM-based, Phase 3)
   const enhancePrompt = async (prompt) => {
-    const cleanPrompt = prompt?.trim()
-    if (!cleanPrompt) return prompt
 
-    // 🔹 Normalized cache key
-    const cacheKey = `enhance_${cleanPrompt.toLowerCase()}`
-    const cached = sessionStorage.getItem(cacheKey)
-    if (cached) return cached
+  const cleanPrompt = prompt?.trim()
 
-    try {
-      const { data } = await axios.post(
-        `${backendUrl}/api/image/enhance-prompt`,
-        { prompt: cleanPrompt },
-        { headers: { token } }
-      )
+  if (!cleanPrompt) return null
 
-      if (data?.success && data.enhancedPrompt) {
-        sessionStorage.setItem(cacheKey, data.enhancedPrompt)
-        return data.enhancedPrompt
-      }
+  try {
 
-      toast.error("Prompt enhancement failed")
-      return cleanPrompt
+    const { data } = await axios.post(
+      `${backendUrl}/api/image/enhance-prompt`,
+      { prompt: cleanPrompt },
+      { headers: { token } }
+    )
 
-    } catch (error) {
-      console.error("Enhance prompt error:", error)
-      toast.error("Enhancement service unavailable")
-      return cleanPrompt
+    if (data?.success) {
+
+      return {
+              enhancedPrompt: data.enhancedPrompt,
+
+              originalScore: data.originalScore,
+
+              enhancedScore: data.enhancedScore,
+
+              confidence: data.confidence,
+
+              category: data.category,
+
+              critic: data.critic,
+
+              strengths: data.strengths,
+
+              breakdown: data.breakdown
+}
+
     }
-  }
 
-  const generateImage = async (prompt) => {
+    toast.error("Prompt enhancement failed")
+    return null
+
+  } catch (error) {
+
+    console.error(
+      "Enhance prompt error:",
+      error
+    )
+
+    toast.error(
+      "Enhancement service unavailable"
+    )
+
+    return null
+  }
+}
+
+  const generateImage = async (payload) => {
     try {
       const { data } = await axios.post(
         `${backendUrl}/api/image/generate-image`,
-        { prompt },
+        payload,
         { headers: { token } }
       )
 

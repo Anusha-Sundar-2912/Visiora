@@ -16,12 +16,12 @@ const Description = () => {
 
       {/* heading */}
       <div className="text-center mb-16">
-        <h1 className="text-3xl sm:text-4xl font-semibold mb-2">
-          Create AI Images
-        </h1>
+<h1 className="text-3xl sm:text-4xl font-semibold mb-2">
+  Visual Storytelling
+</h1>
         <p className="text-gray-500">
-          Turn your imagination into visuals
-        </p>
+  Every great creation starts with an idea
+</p>
       </div>
 
       {/* content wrapper */}
@@ -45,22 +45,21 @@ const Description = () => {
 
         {/* text column */}
         <div className="max-w-2xl">
-          <h2 className="text-2xl sm:text-3xl font-medium mb-6">
-            Introducing the AI-Powered Text to Image Generator
-          </h2>
+         <h2 className="text-2xl sm:text-3xl font-medium mb-6">
+  Bring Stories to Life
+</h2>
 
           <p className="text-gray-600 mb-5 leading-relaxed text-justify">
-  Visiora allows you to convert simple text prompts into visually
-  compelling images within seconds. Whether you are creating content
-  for social media, designing product visuals, or exploring creative
-  concepts, the platform helps bring your ideas to life effortlessly.
+  Transform concepts, scenes, and narratives into compelling visual
+  experiences. Whether you're exploring a creative idea, building a
+  product concept, or crafting a cinematic sequence, Visiora helps
+  turn imagination into tangible visuals.
 </p>
 
 <p className="text-gray-600 leading-relaxed text-justify">
-  Just describe what you have in mind, and our AI engine handles the
-  rest. From realistic illustrations to artistic designs and concepts
-  that don’t yet exist, Visiora enables fast, high-quality image
-  generation powered by advanced artificial intelligence.
+  From striking images to cinematic storyboards, every creation begins
+  with inspiration. Explore creative possibilities, refine concepts,
+  and transform ideas into memorable visual experiences.
 </p>
 
         </div>

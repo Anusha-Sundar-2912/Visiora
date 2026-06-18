@@ -55,12 +55,49 @@ const BuyCredit = () => {
       </h1>
 
       <div className='flex flex-wrap justify-center gap-6 text-left'>
-        {plans.map((item, index) => (
-          <div
-            key={index}
-            className='bg-white drop-shadow-sm border rounded-lg py-12 px-8 text-gray-600 hover:scale-105 transition-all duration-500'
-          >
-            <img width={40} src={assets.logo_icon} alt="" />
+   {plans.map((item, index) => (
+
+ <div
+  key={index}
+  className={`
+    relative
+    bg-white
+    drop-shadow-sm
+    border
+    rounded-lg
+    py-12
+    px-8
+    text-gray-600
+    hover:scale-105
+    transition-all
+    duration-500
+
+    ${item.id === 'Premium'
+      ? 'border-purple-500 shadow-lg'
+      : ''}
+  `}
+>
+
+  {item.id === 'Premium' && (
+    <div
+      className="
+      absolute
+      top-4
+      right-4
+      bg-purple-600
+      text-white
+      text-xs
+      font-semibold
+      px-3
+      py-1
+      rounded-full
+      "
+    >
+      Most Popular
+    </div>
+  )}
+
+  <img width={40} src={assets.logo_icon} alt="" />
 
             <p className='mt-3 mb-1 font-semibold'>{item.id}</p>
             <p className='text-sm'>{item.desc}</p>
@@ -70,12 +107,26 @@ const BuyCredit = () => {
             </p>
 
             <div className='flex flex-col mt-4'>
-              <button
-                onClick={() => paymentStripe(item.id)}
-                className='w-full flex justify-center gap-2 border border-gray-400 mt-2 text-sm rounded-md py-2.5 min-w-52 hover:bg-blue-50 hover:border-blue-400'
-              >
-                <img className='h-4' src={assets.stripe_logo} alt="" />
-              </button>
+<button
+  onClick={() => paymentStripe(item.id)}
+  className='
+    w-full
+    flex
+    items-center
+    justify-center
+    gap-2
+    mt-2
+    py-3
+    rounded-md
+    bg-purple-600
+    text-white
+    font-medium
+    hover:bg-purple-700
+    transition-all
+  '
+>
+  Purchase Credits
+</button>
             </div>
 
           </div>

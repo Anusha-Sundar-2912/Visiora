@@ -44,13 +44,27 @@ const GenerateBtn = () => {
                         See the magic. Try now
                     </h1>
 
-                    <button
-                        onClick={onClickHandler}
-                        className='inline-flex items-center gap-2 px-12 py-3 rounded-full bg-black text-white m-auto hover:scale-105 transition-all duration-500'
-                    >
-                        Generate Images
-                        <img className='h-6' src={assets.star_group} alt="" />
-                    </button>
+                    <div className="flex flex-col md:flex-row gap-4 justify-center">
+
+    <button
+        onClick={onClickHandler}
+        className='inline-flex items-center gap-2 px-12 py-3 rounded-full bg-black text-white hover:scale-105 transition-all duration-500'
+    >
+        Generate Images
+        <img className='h-6' src={assets.star_group} alt="" />
+    </button>
+
+    <button
+        onClick={() => {
+            navigate('/storyboard')
+            scrollTo(0,0)
+        }}
+        className='inline-flex items-center gap-2 px-12 py-3 rounded-full bg-purple-600 text-white hover:scale-105 transition-all duration-500'
+    >
+        Create Storyboard 🎬
+    </button>
+
+</div>
                 </div>
 
             </div>
