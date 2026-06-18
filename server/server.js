@@ -1,23 +1,82 @@
-import 'dotenv/config';
+import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
-import userRouter from './routes/userRoutes.js';
-import connectDB from './configs/mongodb.js';
-import imageRouter from './routes/imageRoutes.js';
+import morgan from 'morgan'
 
-// App Config
-const PORT = process.env.PORT || 4000
-const app = express();
-await connectDB()
+import userRouter from './routes/userRoutes.js'
+import imageRouter from './routes/imageRoutes.js'
 
-// Intialize Middlewares
+import connectDB from './configs/mongodb.js'
+
+import errorHandler from './middlewares/errorHandler.js'
+
+const app = express()
+
+// ---------------------
+// Middleware
+// ---------------------
+
 app.use(express.json())
-app.use(cors())
 
-// API routes
-app.use('/api/user',userRouter)
-app.use('/api/image',imageRouter)
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'token']
+}))
 
-app.get('/', (req,res) => res.send("API Working"))
+app.use(morgan('dev'))
 
-app.listen(PORT, () => console.log('Server running on port ' + PORT));
+// ---------------------
+// Routes
+// ---------------------
+
+app.use('/api/user', userRouter)
+
+app.use('/api/image', imageRouter)
+
+// Root Endpoint
+
+app.get('/', (req, res) => {
+  res.send('Visiora API Running')
+})
+
+// Health Endpoint
+
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'UP',
+    service: 'Visiora API',
+    timestamp: new Date().toISOString()
+  })
+})
+
+// Error Middleware
+
+app.use(errorHandler)
+
+// ---------------------
+// Start Server
+// ---------------------
+
+const PORT = process.env.PORT || 10000
+
+connectDB()
+  .then(() => {
+
+    app.listen(PORT, () => {
+      console.log(
+        `Server running on port ${PORT}`
+      )
+    })
+
+  })
+  .catch(err => {
+
+    console.error(
+      'DB connection failed:',
+      err
+    )
+
+    process.exit(1)
+
+  })

@@ -94,29 +94,32 @@ const paymentStripe = async (req, res) => {
 
         let credits, plan, amount, date
 
-        switch (planId) {
-            case 'Basic':
-                plan = 'Basic'
-                credits = 100
-                amount = 10
-                break;
+switch (planId) {
 
-            case 'Advanced':
-                plan = 'Advanced'
-                credits = 500
-                amount = 50
-                break;
+    case 'Professional':
+        plan = 'Professional'
+        credits = 5
+        amount = 249
+        break;
 
-            case 'Business':
-                plan = 'Business'
-                credits = 5000
-                amount = 250
-                break;
+    case 'Premium':
+        plan = 'Premium'
+        credits = 10
+        amount = 499
+        break;
 
-            default:
-                return res.json({ success: false, message: 'plan not found' })
-        }
+    case 'Enterprise':
+        plan = 'Enterprise'
+        credits = 15
+        amount = 999
+        break;
 
+    default:
+        return res.json({
+            success: false,
+            message: 'plan not found'
+        })
+}
         date = Date.now()
 
         const transactionData = {
@@ -130,13 +133,13 @@ const paymentStripe = async (req, res) => {
         const newTransaction = await transactionModel.create(transactionData)
 
         const line_items = [{
-            price_data: {
-                currency: "usd",
-                product_data: {
-                    name: "Credit Purchase"
-                },
-                unit_amount: newTransaction.amount * 100
-            },
+price_data: {
+    currency: "inr",
+    product_data: {
+        name: "Credit Purchase"
+    },
+    unit_amount: newTransaction.amount * 100
+},
             quantity: 1
         }]
 
