@@ -1,21 +1,20 @@
-# Use official Node image
-FROM node:18-alpine
+# Base Image
+FROM node:20-alpine
 
-# Set working directory
+# Application Directory
 WORKDIR /app
 
-# Copy package files
+# Copy dependency files first for caching
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm ci
 
-
-# Copy rest of the backend code
+# Copy source code
 COPY . .
 
-# Expose the port
+# Application Port
 EXPOSE 10000
 
-# Start the server
-CMD ["node", "server.js"]
+# Start application
+CMD ["npm", "start"]
