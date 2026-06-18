@@ -41,72 +41,70 @@ export const assets = {
   razorpay_logo,
   stripe_logo,
 }
-
 export const stepsData = [
   {
-    title: 'Describe Your Vision',
+    title: 'Describe Your Idea',
     description:
-      'Type a phrase, sentence, or paragraph that clearly describes the image you want to generate.',
+      'Enter a creative concept, story, product, scene, or visual idea you want to transform into professional-quality content.',
     icon: step_icon_1,
   },
   {
-    title: 'Watch the Magic',
+    title: 'Analyze & Enhance',
     description:
-      'Our AI engine instantly transforms your prompt into a high-quality, visually stunning image.',
+      'Visiora evaluates your prompt, identifies weaknesses, improves clarity, and generates optimization insights with quality scores.',
     icon: step_icon_2,
   },
   {
-    title: 'Download & Share',
+    title: 'Generate & Create',
     description:
-      'Download your image in seconds or share it directly across your favorite platforms.',
+      'Create enhanced images, cinematic storyboards, and track performance through intelligent analytics and creative insights.',
     icon: step_icon_3,
   },
 ]
-
 export const testimonialsData = [
   {
     image: profile_img_1,
-    name: 'Donald Jackman',
-    role: 'Graphic Designer',
+    name: 'Ethan Brooks',
+    role: 'Creative Director',
     stars: 5,
     text:
-      'Visiora has completely changed my workflow. I can generate clean visuals for client projects in seconds, saving hours of manual design work.',
+      'Visiora has transformed the way our team develops concepts. The storyboard generation and prompt enhancement features help us move from ideas to production-ready visuals significantly faster.',
   },
   {
     image: profile_img_2,
-    name: 'Richard Nelson',
-    role: 'Content Creator',
+    name: 'Noah Carter',
+    role: 'Content Strategist',
     stars: 5,
     text:
-      'As a content creator, speed matters. Visiora helps me turn ideas into eye-catching visuals instantly for social media and campaigns.',
+      'The prompt analysis and creative insights provide a level of refinement that traditional visual tools simply do not offer. It has become an essential part of our content workflow.',
   },
   {
     image: profile_img_3,
     name: 'Ayaan Verma',
-    role: 'Startup Founder',
+    role: 'Brand Consultant',
     stars: 5,
     text:
-      'We use Visiora for marketing creatives and product mockups. The results are consistently impressive and incredibly easy to generate.',
+      'From campaign concepts to visual storytelling, Visiora helps us explore creative directions with confidence. The quality scoring and storyboard features are particularly valuable.',
   },
 ]
 
 export const plans = [
   {
-    id: 'Basic',
-    price: 10,
-    credits: 100,
-    desc: 'Best for personal use.',
+    id: 'Professional',
+    price: 249,
+    credits: 5,
+    desc: 'For individual creators and professionals.',
   },
   {
-    id: 'Advanced',
-    price: 50,
-    credits: 500,
-    desc: 'Best for business use.',
+    id: 'Premium',
+    price: 499,
+    credits: 10,
+    desc: 'For advanced creative workflows and frequent usage.',
   },
   {
-    id: 'Business',
-    price: 250,
-    credits: 5000,
-    desc: 'Best for enterprise use.',
+    id: 'Enterprise',
+    price: 999,
+    credits: 15,
+    desc: 'For agencies, teams, and high-volume content production.',
   },
 ]

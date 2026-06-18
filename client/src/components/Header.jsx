@@ -108,7 +108,7 @@ const Header = () => {
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.2, duration: 0.8 }}
                     >
-                        <p>Best text to image generator</p>
+                        <p>Creative Intelligence Platform</p>
                         <img src={assets.star_icon} alt="" />
                     </motion.div>
 
@@ -119,11 +119,11 @@ const Header = () => {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4, duration: 2 }}
                     >
-                        Turn text to{' '}
+                        Turn {' '}
                         <span className="bg-gradient-to-r from-pink-200 to-purple-200 bg-clip-text text-transparent">
-                            image
+                            Ideas into
                         </span>
-                        , in seconds.
+                        , Visual Stories.
                     </motion.h1>
 
                     {/* Description */}
@@ -133,24 +133,45 @@ const Header = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6, duration: 0.8 }}
                     >
-                        Unleash your creativity with AI. Turn your imagination into visual art in seconds –
-                        just type, and watch the magic happen.
+                        Turn imagination into execution. Optimize prompts, generate breathtaking visuals, build cinematic storyboards, and bring every creative vision to life.
                     </motion.p>
 
                     {/* CTA */}
-                    <motion.button
-                        className="mt-8 px-12 py-3 flex items-center gap-2 rounded-full
-                        bg-white text-indigo-700 font-semibold
-                        hover:bg-pink-50 shadow-lg mx-auto"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.8, duration: 1 }}
-                        onClick={onClickHandler}
-                    >
-                        Generate Images <img className="h-6" src={assets.star_group} alt="" />
-                    </motion.button>
+                   <motion.div
+    className="mt-8 flex flex-col sm:flex-row gap-4 justify-center"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.8, duration: 1 }}
+>
+
+    <motion.button
+        className="px-12 py-3 flex items-center gap-2 rounded-full
+        bg-white text-indigo-700 font-semibold
+        hover:bg-pink-50 shadow-lg"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={onClickHandler}
+    >
+        Generate Images
+        <img
+            className="h-6"
+            src={assets.star_group}
+            alt=""
+        />
+    </motion.button>
+
+    <motion.button
+        className="px-12 py-3 rounded-full
+        bg-pink-500 text-white font-semibold
+        shadow-lg"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => navigate('/storyboard')}
+    >
+        Create Storyboard 🎬
+    </motion.button>
+
+</motion.div>
 
                 </div>
             </div>
