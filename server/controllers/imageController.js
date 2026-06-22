@@ -426,9 +426,9 @@ export const analyzeStory = async (
 
         messages: [
 
-          {
-            role: 'system',
-            content: `
+         {
+  role: 'system',
+  content: `
 You are Visiora's Story Intelligence Engine.
 
 Analyze the story.
@@ -447,8 +447,68 @@ Return ONLY valid JSON.
   "strengths":[],
   "weaknesses":[]
 }
+
+Scoring:
+
+narrativeComplexity = 0-100
+emotionalImpact = 0-100
+visualConsistency = 0-100
+
+storyScore = 0-100
+enhancedStoryScore = 0-100
+
+confidence = 50-100
+
+Genres:
+
+Sci-Fi
+Fantasy
+Adventure
+Horror
+Drama
+Action
+Mystery
+Romance
+Animation
+General
+
+Story Score Guidelines
+
+0-20 = Weak
+21-40 = Basic
+41-60 = Average
+61-75 = Good
+76-89 = Strong
+90-100 = Exceptional
+
+Most stories should score between 60 and 90.
+
+Enhanced score should usually be higher than storyScore.
+
+Evaluate:
+
+- originality
+- character development
+- pacing
+- emotional engagement
+- visual storytelling potential
+- conflict and stakes
+- world building
+
+Create an improved version of the story.
+
+enhancedStory must:
+
+- improve pacing
+- improve visual storytelling
+- improve emotional impact
+- improve scene transitions
+
+All scores must be integers.
+
+Return ONLY JSON.
 `
-          },
+},
 
           {
             role: 'user',
@@ -691,6 +751,24 @@ Format:
       .choices[0]
       .message.content
   )
+
+  storyAnalysis.storyScore =
+  Number(storyAnalysis.storyScore) || 70
+
+storyAnalysis.enhancedStoryScore =
+  Number(storyAnalysis.enhancedStoryScore) || 85
+
+storyAnalysis.confidence =
+  Number(storyAnalysis.confidence) || 90
+
+storyAnalysis.narrativeComplexity =
+  Number(storyAnalysis.narrativeComplexity) || 75
+
+storyAnalysis.emotionalImpact =
+  Number(storyAnalysis.emotionalImpact) || 80
+
+storyAnalysis.visualConsistency =
+  Number(storyAnalysis.visualConsistency) || 85
 
   storyAnalysis.enhancedStory =
   storyAnalysis.enhancedStory || story
