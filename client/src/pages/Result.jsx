@@ -91,9 +91,17 @@ setIsAnalyzed(true)
 
 
   const onSubmitHandler = async (e) => {
-    e.preventDefault()
-    setLoading(true)
+  e.preventDefault()
 
+  console.log("✅ onSubmitHandler fired", new Date().toISOString())
+
+  if (loading) {
+    console.log("⛔ Already loading")
+    return
+  }
+
+  setLoading(true)
+  
     const finalPrompt = useEnhanced ? enhancedInput : input
     const startTime = performance.now()
 
@@ -333,9 +341,13 @@ setIsAnalyzed(true)
               type="text"
               placeholder='Describe what you want to generate'
             />
-            <button className='bg-zinc-900 px-10 py-3 rounded-full'>
-              Generate
-            </button>
+<button
+  type="submit"
+  disabled={loading}
+  className='bg-zinc-900 px-10 py-3 rounded-full disabled:opacity-50'
+>
+  {loading ? "Generating..." : "Generate"}
+</button>
           </div>
 
           {input && (
