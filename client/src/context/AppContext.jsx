@@ -17,6 +17,7 @@ const AppContextProvider = (props) => {
   const loadCreditsData = async () => {
     try {
       const { data } = await axios.get(
+
         `${backendUrl}/api/user/credits`,
         { headers: { token } }
       )
@@ -40,6 +41,7 @@ const AppContextProvider = (props) => {
   try {
 
     const { data } = await axios.post(
+      
       `${backendUrl}/api/image/enhance-prompt`,
       { prompt: cleanPrompt },
       { headers: { token } }
@@ -85,28 +87,36 @@ const AppContextProvider = (props) => {
   }
 }
 
-  const generateImage = async (payload) => {
-    try {
-      const { data } = await axios.post(
-        `${backendUrl}/api/image/generate-image`,
-        payload,
-        { headers: { token } }
-      )
+const generateImage = async (payload) => {
 
-      if (data.success) {
-        loadCreditsData()
-        return data.resultImage
-      } else {
-        toast.error(data.message)
-        loadCreditsData()
-        if (data.creditBalance === 0) {
-          navigate("/buy")
-        }
+  console.log("🚀 generateImage() called")
+
+  try {
+
+    console.log("📤 Sending POST /generate-image")
+
+    const { data } = await axios.post(
+      `${backendUrl}/api/image/generate-image`,
+      payload,
+      { headers: { token } }
+    )
+
+    if (data.success) {
+      loadCreditsData()
+      return data.resultImage
+    } else {
+      toast.error(data.message)
+      loadCreditsData()
+
+      if (data.creditBalance === 0) {
+        navigate("/buy")
       }
-    } catch (error) {
-      toast.error(error.message)
     }
+
+  } catch (error) {
+    toast.error(error.message)
   }
+}
 
   const logout = () => {
     localStorage.removeItem("token")
