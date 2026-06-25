@@ -13,7 +13,7 @@ const groq = new Groq({
 // Generate image
 export const generateImage = async (req, res) => {
   try {
-
+        console.log("🔥 Backend generateImage hit", new Date().toISOString())
     const {
   userId,
   prompt,
