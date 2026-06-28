@@ -9,6 +9,8 @@ const generationSchema = new mongoose.Schema({
 
   prompt: String,
 
+  originalPrompt: String,
+
   enhancedPrompt: String,
 
   imageUrl: String,

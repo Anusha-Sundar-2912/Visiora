@@ -5,9 +5,10 @@ import { motion } from 'framer-motion'
 
 const Result = () => {
 
-  const [input, setInput] = useState('')
-  const [enhancedInput, setEnhancedInput] = useState('')
-  const [useEnhanced, setUseEnhanced] = useState(false)
+const [originalInput, setOriginalInput] = useState('')
+const [input, setInput] = useState('')
+const [enhancedInput, setEnhancedInput] = useState('')
+const [useEnhanced, setUseEnhanced] = useState(false)
 
   const [isAnalyzed, setIsAnalyzed] = useState(false)
 
@@ -43,6 +44,7 @@ const handleAnalyzePrompt = async () => {
   const result = await enhancePrompt(input)
 
   if (!result) return
+  setOriginalInput(input)
 
   setEnhancedInput(
     result.enhancedPrompt
@@ -101,14 +103,16 @@ setIsAnalyzed(true)
   }
 
   setLoading(true)
-  
-    const finalPrompt = useEnhanced ? enhancedInput : input
+
+    const finalPrompt = input
     const startTime = performance.now()
 
     if (finalPrompt) {
       const generatedImage = await generateImage({
 
   prompt: finalPrompt,
+
+  originalPrompt: originalInput,
 
   enhancedPrompt: enhancedInput,
 
@@ -364,14 +368,15 @@ setIsAnalyzed(true)
              <button
                  type="button"
                 onClick={() => {
-                  setUseEnhanced(true)
-                  setPromptScore(enhancedScore)
+  setUseEnhanced(true)
+  setInput(enhancedInput)
+  setPromptScore(enhancedScore)
 
-                   window.scrollTo({
-                    top: 0,
-                     behavior: 'smooth'
-                  })
-          }}
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+}}
                  className="text-sm underline text-green-600"
               >
                   Apply Enhancement
@@ -464,6 +469,7 @@ setIsAnalyzed(true)
              setBreakdown(null)
              setShowBreakdown(false)
              setInput('')
+             setOriginalInput('')
              setEnhancedInput('')
              setUseEnhanced(false)
              setIsAnalyzed(false)

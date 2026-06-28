@@ -17,6 +17,7 @@ export const generateImage = async (req, res) => {
     const {
   userId,
   prompt,
+  originalPrompt,
   enhancedPrompt,
   originalScore,
   enhancedScore,
@@ -78,14 +79,17 @@ export const generateImage = async (req, res) => {
       }
     )
 
-    await generationModel.create({
-        userId: user._id,
+   await generationModel.create({
 
-        prompt,
+    userId: user._id,
 
-        enhancedPrompt,
+    prompt,
 
-        imageUrl: resultImage,
+    originalPrompt: originalPrompt || prompt,
+
+    enhancedPrompt,
+
+    imageUrl: resultImage,
 
         originalScore,
 
@@ -103,9 +107,7 @@ export const generateImage = async (req, res) => {
 
         latencyMs,
 
-       mode: enhancedPrompt
-         ? 'enhanced'
-          : 'original'
+        mode
     })
 
     res.json({
