@@ -94,8 +94,10 @@ setIsAnalyzed(true)
 
   const onSubmitHandler = async (e) => {
   e.preventDefault()
+  const requestId = crypto.randomUUID();
+console.log("🟢 Frontend Request ID:", requestId);
 
-  console.log("✅ onSubmitHandler fired", new Date().toISOString())
+  console.count("onSubmitHandler");
 
   if (loading) {
     console.log("⛔ Already loading")
@@ -109,6 +111,8 @@ setIsAnalyzed(true)
 
     if (finalPrompt) {
       const generatedImage = await generateImage({
+
+        requestId,
 
   prompt: finalPrompt,
 
