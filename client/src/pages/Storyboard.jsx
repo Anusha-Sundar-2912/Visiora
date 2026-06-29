@@ -29,7 +29,6 @@ const [storyAnalysis, setStoryAnalysis] =
   useState(null)
 const [loading, setLoading] = useState(false)
 const pdfRef = useRef()
-const hiddenPdfRef = useRef()
 
 const {
   backendUrl,
@@ -127,55 +126,82 @@ if (data.success) {
 
 const exportPDF = async () => {
 
-  if (!hiddenPdfRef.current) return
+  const pdf = new jsPDF('p', 'mm', 'a4')
 
-  const pdf = new jsPDF("p", "mm", "a4")
+  pdf.setFontSize(22)
+  pdf.text('Visiora Storyboard', 15, 20)
 
-  const pages = hiddenPdfRef.current.querySelectorAll(".pdf-page")
+  pdf.setFontSize(12)
 
-  for (let i = 0; i < pages.length; i++) {
+  pdf.text(
+    story.slice(0, 150),
+    15,
+    30
+  )
 
-    const canvas = await html2canvas(pages[i], {
-      scale: 2,
-      useCORS: true,
-      backgroundColor: "#ffffff",
-      scrollY: -window.scrollY
-    })
+  let currentY = 45
 
-    const imgData = canvas.toDataURL("image/png")
+  for (let i = 0; i < storyboard.length; i++) {
 
-    const pdfWidth = 210
-    const pdfHeight = 297
+    const scene = storyboard[i]
 
-    const margin = 10
+    const img = await html2canvas(
+      document.querySelectorAll('img')[i]
+    )
 
-    const imgWidth = pdfWidth - margin * 2
+    const imageData =
+      img.toDataURL('image/png')
 
-    const imgHeight =
-      canvas.height *
-      imgWidth /
-      canvas.width
+    if (i !== 0 && i % 3 === 0) {
 
-    if (i !== 0) {
       pdf.addPage()
+
+      currentY = 20
+
     }
 
-    pdf.addImage(
-      imgData,
-      "PNG",
-      margin,
-      margin,
-      imgWidth,
-      Math.min(imgHeight, pdfHeight - margin * 2)
+    pdf.setFontSize(16)
+
+    pdf.text(
+      `Scene ${i + 1}`,
+      15,
+      currentY
     )
+
+    pdf.addImage(
+      imageData,
+      'PNG',
+      15,
+      currentY + 5,
+      60,
+      40
+    )
+
+    pdf.setFontSize(10)
+
+    pdf.text(
+      `Title: ${scene.title}`,
+      85,
+      currentY + 10
+    )
+
+    pdf.text(
+      `Mood: ${scene.mood}`,
+      85,
+      currentY + 18
+    )
+
+    pdf.text(
+      `Camera: ${scene.camera}`,
+      85,
+      currentY + 26
+    )
+
+    currentY += 70
 
   }
 
-  pdf.save("Visiora-Storyboard.pdf")
-
-}
-
-  pdf.save("Visiora-Storyboard.pdf")
+  pdf.save('Visiora-Storyboard.pdf')
 
 }
 
@@ -595,143 +621,7 @@ storyAnalysis.storyScore >= 90
   </div>
 
 )}
-<div
-  ref={hiddenPdfRef}
-  className="fixed left-[-99999px] top-0 bg-white w-[794px] p-8"
->
 
-  {/* ---------- PAGE 1 ---------- */}
-
-  <div className="pdf-page">
-
-    <h1 className="text-3xl font-bold mb-6">
-      🎬 Story Intelligence
-    </h1>
-
-    <div className="grid grid-cols-4 gap-4 mb-8">
-
-      <div className="border rounded-xl p-4">
-        <p>Story Score</p>
-        <h2 className="font-bold">
-          {storyAnalysis?.storyScore}/100
-        </h2>
-      </div>
-
-      <div className="border rounded-xl p-4">
-        <p>Enhanced Score</p>
-        <h2 className="font-bold">
-          {storyAnalysis?.enhancedStoryScore}/100
-        </h2>
-      </div>
-
-      <div className="border rounded-xl p-4">
-        <p>Confidence</p>
-        <h2 className="font-bold">
-          {storyAnalysis?.confidence}%
-        </h2>
-      </div>
-
-      <div className="border rounded-xl p-4">
-        <p>Genre</p>
-        <h2 className="font-bold">
-          {storyAnalysis?.genre}
-        </h2>
-      </div>
-
-    </div>
-
-    {storyboard.slice(0,3).map((scene,index)=>(
-
-      <div
-        key={index}
-        className="border rounded-xl p-4 mb-6"
-      >
-
-        <div className="flex gap-4">
-
-          <img
-            src={scene.imageUrl}
-            alt=""
-            className="w-44 h-36 rounded-xl object-cover"
-          />
-
-          <div>
-
-            <h2 className="font-bold text-xl mb-2">
-              Scene {index+1}
-            </h2>
-
-            <p><strong>Title:</strong> {scene.title}</p>
-
-            <p><strong>Visual:</strong> {scene.visual}</p>
-
-            <p><strong>Camera:</strong> {scene.camera}</p>
-
-            <p><strong>Mood:</strong> {scene.mood}</p>
-
-            <p><strong>Lighting:</strong> {scene.lighting}</p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    ))}
-
-  </div>
-
-  {/* ---------- PAGE 2 ---------- */}
-
-  <div
-    className="pdf-page"
-    style={{
-      marginTop: "80px"
-    }}
-  >
-
-    {storyboard.slice(3,6).map((scene,index)=>(
-
-      <div
-        key={index}
-        className="border rounded-xl p-4 mb-6"
-      >
-
-        <div className="flex gap-4">
-
-          <img
-            src={scene.imageUrl}
-            alt=""
-            className="w-44 h-36 rounded-xl object-cover"
-          />
-
-          <div>
-
-            <h2 className="font-bold text-xl mb-2">
-              Scene {index+4}
-            </h2>
-
-            <p><strong>Title:</strong> {scene.title}</p>
-
-            <p><strong>Visual:</strong> {scene.visual}</p>
-
-            <p><strong>Camera:</strong> {scene.camera}</p>
-
-            <p><strong>Mood:</strong> {scene.mood}</p>
-
-            <p><strong>Lighting:</strong> {scene.lighting}</p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    ))}
-
-  </div>
-
-</div>
     </div>
   )
 }
