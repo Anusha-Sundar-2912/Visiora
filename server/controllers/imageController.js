@@ -13,21 +13,29 @@ const groq = new Groq({
 // Generate image
 export const generateImage = async (req, res) => {
   try {
-        console.log("🔥 Backend generateImage hit", new Date().toISOString())
+
     const {
-  userId,
-  prompt,
-  originalPrompt,
-  enhancedPrompt,
-  originalScore,
-  enhancedScore,
-  confidence,
-  category,
-  strengths,
-  critic,
-  breakdown,
-  mode
-} = req.body
+      requestId,
+      userId,
+      prompt,
+      originalPrompt,
+      enhancedPrompt,
+      originalScore,
+      enhancedScore,
+      confidence,
+      category,
+      strengths,
+      critic,
+      breakdown,
+      mode
+    } = req.body
+
+    console.log("==================================")
+    console.log("🚀 BACKEND REQUEST")
+    console.log("Request ID :", requestId)
+    console.log("Time       :", new Date().toISOString())
+    console.log("Prompt     :", prompt)
+    console.log("==================================")
 
     if (!userId || !prompt) {
       return res.json({
