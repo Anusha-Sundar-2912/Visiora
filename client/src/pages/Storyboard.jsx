@@ -1,17 +1,19 @@
-import html2canvas from 'html2canvas'
-import jsPDF from 'jspdf'
-import { useRef } from 'react'
-
 import React, {
   useState,
   useContext
 } from 'react'
+
+import { useRef } from "react";
+
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 import axios from 'axios'
 
 import {
   AppContext
 } from '../context/AppContext'
+
 
 const Storyboard = () => {
 
@@ -28,7 +30,9 @@ const [storyboard, setStoryboard] = useState([])
 const [storyAnalysis, setStoryAnalysis] =
   useState(null)
 const [loading, setLoading] = useState(false)
-const pdfRef = useRef()
+const page1Ref = useRef(null);
+const page2Ref = useRef(null);
+const page3Ref = useRef(null);
 
 const {
   backendUrl,
@@ -126,82 +130,77 @@ if (data.success) {
 
 const exportPDF = async () => {
 
-  const pdf = new jsPDF('p', 'mm', 'a4')
+  if (
+  !page1Ref.current ||
+  !page2Ref.current ||
+  !page3Ref.current
+) return;
 
-  pdf.setFontSize(22)
-  pdf.text('Visiora Storyboard', 15, 20)
+  const pdf = new jsPDF("p", "mm", "a4");
 
-  pdf.setFontSize(12)
+  const capture = async (element) => {
 
-  pdf.text(
-    story.slice(0, 150),
-    15,
-    30
-  )
+    const canvas = await html2canvas(element, {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: "#ffffff",
+      scrollY: -window.scrollY
+    });
 
-  let currentY = 45
+    return canvas;
 
-  for (let i = 0; i < storyboard.length; i++) {
+  };
 
-    const scene = storyboard[i]
+  const canvas1 = await capture(page1Ref.current);
+  const canvas2 = await capture(page2Ref.current);
+  const canvas3 = await capture(page3Ref.current);
 
-    const img = await html2canvas(
-      document.querySelectorAll('img')[i]
-    )
+  const pageWidth = 210;
 
-    const imageData =
-      img.toDataURL('image/png')
+  const page1Height =
+    (canvas1.height * pageWidth) /
+    canvas1.width;
 
-    if (i !== 0 && i % 3 === 0) {
+  pdf.addImage(
+    canvas1.toDataURL("image/png"),
+    "PNG",
+    0,
+    0,
+    pageWidth,
+    page1Height
+  );
 
-      pdf.addPage()
+  pdf.addPage();
 
-      currentY = 20
+  const page2Height =
+    (canvas2.height * pageWidth) /
+    canvas2.width;
 
-    }
+  pdf.addImage(
+    canvas2.toDataURL("image/png"),
+    "PNG",
+    0,
+    0,
+    pageWidth,
+    page2Height
+  );
 
-    pdf.setFontSize(16)
+  pdf.addPage();
 
-    pdf.text(
-      `Scene ${i + 1}`,
-      15,
-      currentY
-    )
+const page3Height =
+  (canvas3.height * pageWidth) /
+  canvas3.width;
 
-    pdf.addImage(
-      imageData,
-      'PNG',
-      15,
-      currentY + 5,
-      60,
-      40
-    )
+pdf.addImage(
+  canvas3.toDataURL("image/png"),
+  "PNG",
+  0,
+  0,
+  pageWidth,
+  page3Height
+);
 
-    pdf.setFontSize(10)
-
-    pdf.text(
-      `Title: ${scene.title}`,
-      85,
-      currentY + 10
-    )
-
-    pdf.text(
-      `Mood: ${scene.mood}`,
-      85,
-      currentY + 18
-    )
-
-    pdf.text(
-      `Camera: ${scene.camera}`,
-      85,
-      currentY + 26
-    )
-
-    currentY += 70
-
-  }
-
-  pdf.save('Visiora-Storyboard.pdf')
+  pdf.save("Storyboard.pdf");
 
 }
 
@@ -321,6 +320,8 @@ const exportPDF = async () => {
 </div>
 
 {storyAnalysis && (
+
+<div ref={page1Ref}>
 
 <div className="
 bg-gradient-to-r
@@ -536,18 +537,11 @@ storyAnalysis.storyScore >= 90
 
 </div>
 
-</div>
-
-)}
-
 {storyboard.length > 0 && (
 
-  <div
-  ref={pdfRef}
-  className="mt-10 grid gap-6"
->
+<div className="mt-10 grid gap-6">
 
-    {storyboard.map((scene, index) => (
+   {storyboard.slice(0, 1).map((scene, index) => (
 
          <div
             key={index}
@@ -565,7 +559,7 @@ storyAnalysis.storyScore >= 90
             items-center
             "
           >
-            <img
+           <img
   src={scene.imageUrl}
   alt={scene.title}
   className="
@@ -577,8 +571,9 @@ storyAnalysis.storyScore >= 90
   "
 />
 
+<div>
 
-        <h2 className="text-2xl font-bold mb-3 text-purple-600">
+<h2 className="text-2xl font-bold mb-3 text-purple-600">
           Scene {index + 1}
         </h2>
 
@@ -615,10 +610,183 @@ storyAnalysis.storyScore >= 90
 </div>
 
       </div>
+      </div>
 
     ))}
 
   </div>
+
+)}
+
+</div>
+
+</div>
+
+)}
+
+{storyboard.length > 3 && (
+
+<div ref={page2Ref} className="mt-10 grid gap-6">
+
+  {storyboard.slice(1, 4).map((scene, index) => (
+
+    <div
+      key={index + 3}
+      className="
+      bg-gradient-to-r
+      from-purple-50
+      to-pink-50
+      rounded-2xl
+      shadow-lg
+      p-6
+      border
+      grid
+      md:grid-cols-3
+      gap-6
+      items-center
+      "
+    >
+
+      <img
+        src={scene.imageUrl}
+        alt={scene.title}
+        className="
+        rounded-xl
+        h-52
+        w-full
+        object-cover
+        shadow
+        "
+      />
+
+      <div>
+
+        <h2 className="text-2xl font-bold mb-3 text-purple-600">
+          Scene {index + 2}
+        </h2>
+
+        <p className="mb-2">
+          <strong>Title:</strong> {scene.title}
+        </p>
+
+        <p className="mb-2">
+          <strong>Visual:</strong> {scene.visual}
+        </p>
+
+        <p className="mb-2">
+          <strong>Camera:</strong> {scene.camera}
+        </p>
+
+        <p className="mb-2">
+          <strong>Mood:</strong> {scene.mood}
+        </p>
+
+        <p className="mb-2">
+          <strong>Lighting:</strong> {scene.lighting}
+        </p>
+
+        <div className="bg-white rounded-xl p-4 mt-4">
+
+          <p className="font-semibold mb-2">
+            AI Image Prompt
+          </p>
+
+          <p className="text-gray-600 text-sm">
+            {scene.imagePrompt}
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  ))}
+
+</div>
+
+)}
+
+{storyboard.length > 4 && (
+
+<div ref={page3Ref} className="mt-10 grid gap-6">
+
+  {storyboard.slice(4).map((scene, index) => (
+
+    <div
+      key={index + 4}
+      className="
+      bg-gradient-to-r
+      from-purple-50
+      to-pink-50
+      rounded-2xl
+      shadow-lg
+      p-6
+      border
+      grid
+      md:grid-cols-3
+      gap-6
+      items-center
+      "
+    >
+
+      <img
+        src={scene.imageUrl}
+        alt={scene.title}
+        className="
+        rounded-xl
+        h-52
+        w-full
+        object-cover
+        shadow
+        "
+      />
+
+      <div>
+
+        <h2 className="text-2xl font-bold mb-3 text-purple-600">
+          Scene {index + 5}
+        </h2>
+
+        <p className="mb-2">
+          <strong>Title:</strong> {scene.title}
+        </p>
+
+        <p className="mb-2">
+          <strong>Visual:</strong> {scene.visual}
+        </p>
+
+        <p className="mb-2">
+          <strong>Camera:</strong> {scene.camera}
+        </p>
+
+        <p className="mb-2">
+          <strong>Mood:</strong> {scene.mood}
+        </p>
+
+        <p className="mb-2">
+          <strong>Lighting:</strong> {scene.lighting}
+        </p>
+
+        <div className="bg-white rounded-xl p-4 mt-4">
+
+          <p className="font-semibold mb-2">
+            AI Image Prompt
+          </p>
+
+          <p className="text-gray-600 text-sm">
+            {scene.imagePrompt}
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  ))}
+
+</div>
 
 )}
 
