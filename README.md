@@ -1,93 +1,509 @@
-# 🎨 Visiora  
-### *Type it. Imagine it. See it.*
+# 🎨 Visiora — AI Prompt Intelligence & Image Generation Platform
 
-Visiora is a sleek AI-powered web app that turns your ideas into visuals in seconds.  
-No design skills. No waiting. Just describe — and let the AI handle the rest.
+> **Think Better Prompts. Generate Better Images.**
 
----
+Visiora is a full-stack AI-powered platform that transforms simple ideas into stunning visuals through intelligent prompt enhancement, AI-powered analysis, storyboard generation, analytics, and high-quality image creation.
 
-## 🌐 Live  
-🔗 https://visiora-nine.vercel.app/
+Unlike traditional text-to-image tools, Visiora first understands, critiques, improves, and scores your prompt before generating an image—helping users create significantly better AI-generated content with minimal effort.
 
 ---
 
-## ⚡ What makes it cool?
+## 🌐 Live Demo
 
-- ✍️ **Prompt → Art instantly**  
-  Turn plain text into polished visuals without friction
-
-- ⚡ **Ridiculously fast**  
-  No long queues — results appear in seconds
-
-- 🎯 **Zero learning curve**  
-  If you can describe it, you can generate it
-
-- 🎨 **Clean, modern UI**  
-  Built to feel smooth, minimal, and actually enjoyable
-
-- 📥 **Download-ready output**  
-  Your images are yours — save, share, use anywhere
+🚀 **Live Application:**  
+https://visiora-nine.vercel.app/
 
 ---
 
-## 🧠 Behind the scenes (without the boring parts)
+# ✨ Features
 
-You type → AI interprets → Image gets generated → You download
+## 🤖 AI Prompt Enhancement
 
-That’s it.  
-No complicated workflows, no clutter.
+Transform simple prompts into professional-quality prompts using AI-powered prompt engineering.
 
----
+**Example**
 
-## 🖼️ Sneak Peek
+**Input**
 
-| Feature | Preview |
-|--------|--------|
-| Hero Section | (<img width="1919" height="1055" alt="Screenshot 2026-04-30 232926" src="https://github.com/user-attachments/assets/35f1ba2c-a70b-4f23-9fd1-28ab10ec71f7" />
-|
-| How it Works | (<img width="1897" height="991" alt="Screenshot 2026-04-30 232952" src="https://github.com/user-attachments/assets/36a28d7b-a5a4-4da6-a0d8-7e9c3738a826" />
-|
-| Generator | (<img width="1883" height="890" alt="Screenshot 2026-04-30 233011" src="https://github.com/user-attachments/assets/07091edc-8ab6-4050-b410-fa7d6ce8bfc0" />
-|
-| Testimonials | (<img width="1886" height="1021" alt="Screenshot 2026-04-30 233032" src="https://github.com/user-attachments/assets/0cb0690f-4b6e-46db-b54a-578ce2abb1ca" />
-|
+> cat
+
+**Enhanced Prompt**
+
+> A majestic orange tabby cat sitting on an old wooden windowsill during golden hour, cinematic lighting, ultra-detailed fur, shallow depth of field, highly realistic photography.
 
 ---
 
-## 🛠️ Built With
+## 🧠 AI Prompt Intelligence
 
-- **Frontend:** Next.js / React  
-- **Styling:** Tailwind CSS  
-- **Deployment:** Vercel  
-- **AI Engine:** Text-to-Image API (plug-and-play ready)
+Every prompt receives a complete AI-powered evaluation.
+
+Visiora analyzes:
+
+- Prompt Quality Score
+- Enhanced Score
+- Confidence Score
+- Category Detection
+- Prompt Strengths
+- Prompt Weaknesses
+- AI Critique
+- Improvement Suggestions
+
+Rather than simply generating images, Visiora helps users learn how to write better prompts.
 
 ---
 
-## 🚀 Run it locally
+## 🎨 AI Image Generation
+
+Generate high-quality AI images from enhanced prompts.
+
+Features include:
+
+- High-resolution image generation
+- Fast response times
+- Cloud image storage
+- One-click image download
+- Secure generation history
+
+---
+
+## 📖 Storyboard Generator
+
+Turn complete stories into cinematic visual storyboards.
+
+Automatically generates:
+
+- Story Analysis
+- Genre Detection
+- Narrative Complexity
+- Emotional Impact
+- Visual Consistency
+- Scene Breakdown
+- Camera Directions
+- Lighting Suggestions
+- Mood
+- Scene-specific Image Prompts
+
+Perfect for:
+
+- Film concepts
+- Storyboarding
+- Animation planning
+- Game design
+- Visual storytelling
+
+---
+
+## 📊 Analytics Dashboard
+
+Track prompt performance through an interactive analytics dashboard.
+
+Includes:
+
+- Total Images Generated
+- Average Confidence
+- Prompt Improvement Gain
+- Category Distribution
+- Most Used Generation Mode
+- Best Performing Prompt
+
+---
+
+## 📜 Prompt History
+
+Every generation is automatically stored.
+
+View:
+
+- Original Prompt
+- Enhanced Prompt
+- Generated Image
+- AI Analysis
+- Prompt Scores
+- Generation Date
+
+---
+
+## 📄 PDF Export
+
+Export storyboard reports containing:
+
+- Story Intelligence
+- AI Analysis
+- Scene Images
+- Camera Directions
+- Lighting
+- Scene Prompts
+
+Ideal for presentations, creative planning, and production workflows.
+
+---
+
+## 🔐 Secure Authentication
+
+- User Registration
+- Login
+- JWT Authentication
+- Protected Routes
+- Credit Management
+- Session Handling
+
+---
+
+## ☁️ Cloud Storage
+
+Generated images are securely stored using Cloudinary.
+
+Benefits:
+
+- Persistent image URLs
+- Optimized delivery
+- Fast loading
+- Secure cloud storage
+
+---
+
+# 🚀 Workflow
+
+```text
+User Prompt
+      │
+      ▼
+AI Prompt Analysis
+      │
+      ▼
+Prompt Enhancement
+      │
+      ▼
+Quality Scoring
+      │
+      ▼
+Image Generation
+      │
+      ▼
+History Storage
+      │
+      ▼
+Analytics Dashboard
+```
+
+---
+
+# 📸 Screenshots
+
+## 🏠 Home
+
+![Home](<img width="1918" height="1061" alt="Screenshot 2026-06-18 164338" src="https://github.com/user-attachments/assets/3f979b12-fcc7-4c24-876f-5439f825ada5" />)
+
+---
+
+## ✨ Prompt Enhancement
+
+![Prompt Enhancement](<img width="1876" height="1008" alt="Screenshot 2026-06-28 103637" src="https://github.com/user-attachments/assets/3a2e9ddc-915d-40f9-8c09-e3fbcde792b2" />)
+
+---
+
+## 🎨 Image Generator
+
+![Image Generator]()
+
+---
+
+## 🧠 AI Analysis
+
+![AI Analysis](screenshots/analysis.png)
+
+---
+
+## 📖 Storyboard
+
+![Storyboard](screenshots/storyboard.png)
+
+---
+
+## 📊 Analytics Dashboard
+
+![Analytics](screenshots/analytics.png)
+
+---
+
+## 📜 Prompt History
+
+![History](screenshots/history.png)
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React.js
+- Vite
+- Tailwind CSS
+- Framer Motion
+- Axios
+
+## Backend
+
+- Node.js
+- Express.js
+
+## Database
+
+- MongoDB
+- Mongoose
+
+## Authentication
+
+- JWT
+- bcrypt
+
+## AI Services
+
+- Groq (Llama 3.3 70B)
+- ClipDrop Text-to-Image API
+
+## Cloud Storage
+
+- Cloudinary
+
+## Deployment
+
+- Vercel
+- Render
+
+---
+
+# 📂 Project Structure
+
+```text
+Visiora/
+
+├── client/
+│   ├── components/
+│   ├── pages/
+│   ├── context/
+│   ├── services/
+│   ├── assets/
+│   └── utils/
+│
+├── server/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   └── utils/
+│
+└── README.md
+```
+
+---
+
+# ⚙️ Environment Variables
+
+## Backend
+
+```env
+MONGODB_URI=
+
+JWT_SECRET=
+
+GROQ_API_KEY=
+
+CLIPDROP_API_KEY=
+
+CLOUDINARY_NAME=
+
+CLOUDINARY_API_KEY=
+
+CLOUDINARY_SECRET=
+```
+
+## Frontend
+
+```env
+VITE_BACKEND_URL=
+```
+
+---
+
+# 🚀 Installation
+
+Clone the repository
 
 ```bash
-git clone https://github.com/your-username/visiora.git
-cd visiora
+git clone https://github.com/your-username/Visiora.git
+```
+
+Navigate into the project
+
+```bash
+cd Visiora
+```
+
+Install backend dependencies
+
+```bash
+cd server
 npm install
+```
+
+Install frontend dependencies
+
+```bash
+cd ../client
+npm install
+```
+
+Run the backend
+
+```bash
+npm run server
+```
+
+Run the frontend
+
+```bash
 npm run dev
 ```
-##🔐 Environment Setup
 
-Create a .env.local file:
-```bash
-NEXT_PUBLIC_API_KEY=your_api_key_here
+---
+
+# 🎯 Core Functionalities
+
+- AI Prompt Engineering
+- Prompt Enhancement
+- Prompt Quality Scoring
+- AI Image Generation
+- Storyboard Generation
+- Story Intelligence
+- PDF Export
+- Analytics Dashboard
+- Prompt History
+- Secure Authentication
+- Credit Management
+- Cloud Image Storage
+- Responsive UI
+
+---
+
+# 🌐 REST API
+
+## Authentication
+
+```http
+POST /api/user/register
+POST /api/user/login
+GET  /api/user/credits
 ```
+
 ---
-##💡 Where this can be used
-- Social media creatives
-- Product mockups
-- Story visuals
-- Quick design ideas
-- Late-night “what if…” imagination moments
+
+## Prompt Intelligence
+
+```http
+POST /api/image/enhance-prompt
+```
+
 ---
-##🔮 What’s next?
-- 🎥 Text → Video generation
-- 🎨 Style controls (realistic, anime, etc.)
-- 🧾 Prompt history & gallery
-- 🔁 Image variations & edits
+
+## Image Generation
+
+```http
+POST /api/image/generate-image
+```
+
 ---
+
+## Storyboard
+
+```http
+POST /api/image/analyze-story
+POST /api/image/storyboard
+```
+
+---
+
+## History
+
+```http
+GET /api/image/history
+GET /api/image/history/:id
+```
+
+---
+
+# 🌟 Highlights
+
+- 🚀 Full-Stack AI Platform
+- 🤖 Intelligent Prompt Engineering
+- 🎨 AI Image Generation
+- 📖 Storyboard Generation
+- 📊 Analytics Dashboard
+- 📜 Prompt History
+- 📄 PDF Export
+- ☁️ Cloud Storage
+- 🔐 JWT Authentication
+- 📱 Fully Responsive UI
+- ⚡ Production-Ready Architecture
+- 🌐 RESTful Backend APIs
+
+---
+
+# 🔮 Future Improvements
+
+- 🎥 AI Video Generation
+- 🖌️ Image Editing
+- 🔁 Image Variations
+- 🎨 Style Presets
+- 🌍 Multi-language Prompting
+- 🖼️ Public Gallery
+- 👥 Team Collaboration
+- 📱 Mobile Application
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create a feature branch
+
+```bash
+git checkout -b feature/my-feature
+```
+
+3. Commit your changes
+
+```bash
+git commit -m "Add awesome feature"
+```
+
+4. Push your branch
+
+```bash
+git push origin feature/my-feature
+```
+
+5. Open a Pull Request
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+# 👩‍💻 Author
+
+**Anusha Sundar**
+
+B.Tech Computer Science Engineering
+
+AI • Full Stack Development • Backend Engineering
+
+---
+
+## ⭐ If you like this project, consider giving it a star!<img width="1918" height="1061" alt="Screenshot 2026-06-18 164338" src="https://github.com/user-attachments/assets/2ab56854-1c25-4a2c-b25b-01338efa941e" />
