@@ -1,6 +1,6 @@
-# 🎨 Visiora — AI Prompt Intelligence & Image Generation Platform
+# 🎨 Visiora — AI Prompt Intelligence & Creative Generation Platform
 
-> **Think Better Prompts. Generate Better Images.**
+> **Craft exceptional prompts, enhance them with AI intelligence, and transform imagination into stunning visuals.**
 
 Visiora is a full-stack AI-powered platform that transforms simple ideas into stunning visuals through intelligent prompt enhancement, AI-powered analysis, storyboard generation, analytics, and high-quality image creation.
 
