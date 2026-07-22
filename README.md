@@ -192,43 +192,44 @@ Analytics Dashboard
 
 ## 🏠 Home
 
-![Home](<img width="1918" height="1061" alt="Screenshot 2026-06-18 164338" src="https://github.com/user-attachments/assets/3f979b12-fcc7-4c24-876f-5439f825ada5" />)
+<img width="1917" height="1153" alt="Screenshot 2026-07-22 104152" src="https://github.com/user-attachments/assets/e43d249c-8515-4a18-a9ae-952865abe116" />
+<img width="1917" height="1151" alt="Screenshot 2026-07-22 104138" src="https://github.com/user-attachments/assets/a4d26420-0f9f-4528-bde2-0714d371129b" />
+<img width="1917" height="1153" alt="Screenshot 2026-07-22 104127" src="https://github.com/user-attachments/assets/e3838678-bf0b-4b8c-bcb9-6081e758ceac" />
+<img width="1917" height="1155" alt="Screenshot 2026-07-22 104113" src="https://github.com/user-attachments/assets/76dafb92-6395-48e0-81d3-cb821214ccaf" />
+<img width="1917" height="1158" alt="Screenshot 2026-07-22 104036" src="https://github.com/user-attachments/assets/6f077866-8dfe-49ac-bd6b-b038b7371ac4" />
+
 
 ---
 
 ## ✨ Prompt Enhancement
 
-![Prompt Enhancement](<img width="1876" height="1008" alt="Screenshot 2026-06-28 103637" src="https://github.com/user-attachments/assets/3a2e9ddc-915d-40f9-8c09-e3fbcde792b2" />)
+<img width="1917" height="1160" alt="Screenshot 2026-07-22 104619" src="https://github.com/user-attachments/assets/5bd9ca61-d576-4027-bc56-d26e0857e0db" />
 
 ---
 
 ## 🎨 Image Generator
 
-![Image Generator]()
-
----
-
-## 🧠 AI Analysis
-
-![AI Analysis](screenshots/analysis.png)
+<img width="1917" height="1155" alt="Screenshot 2026-07-22 104714" src="https://github.com/user-attachments/assets/e0d04bfa-df7d-41bb-8ee9-08076ed72296" />
+<img width="1916" height="1156" alt="Screenshot 2026-07-22 130105" src="https://github.com/user-attachments/assets/075a457e-dc5a-49e0-b781-9c28f168de5a" />
 
 ---
 
 ## 📖 Storyboard
 
-![Storyboard](screenshots/storyboard.png)
+<img width="1906" height="1150" alt="Screenshot 2026-07-22 125707" src="https://github.com/user-attachments/assets/fc31231d-d078-4f94-b8f4-276107652f7d" />
+<img width="1917" height="1160" alt="Screenshot 2026-07-22 125805" src="https://github.com/user-attachments/assets/ffdc319d-66ff-471c-9f4c-1c7591e2b51e" />
 
 ---
 
 ## 📊 Analytics Dashboard
 
-![Analytics](screenshots/analytics.png)
+<img width="1917" height="1158" alt="Screenshot 2026-07-22 130159" src="https://github.com/user-attachments/assets/9ea936a3-310c-445f-9174-a0a405ebecc4" />
 
 ---
 
 ## 📜 Prompt History
 
-![History](screenshots/history.png)
+<img width="1917" height="1156" alt="Screenshot 2026-07-22 125903" src="https://github.com/user-attachments/assets/22b4c925-9008-4f0d-a7e1-e16862563a4e" />
 
 ---
 
@@ -506,4 +507,4 @@ AI • Full Stack Development • Backend Engineering
 
 ---
 
-## ⭐ If you like this project, consider giving it a star!<img width="1918" height="1061" alt="Screenshot 2026-06-18 164338" src="https://github.com/user-attachments/assets/2ab56854-1c25-4a2c-b25b-01338efa941e" />
+## ⭐ If you like this project, consider giving it a star!
