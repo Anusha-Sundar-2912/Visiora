@@ -489,20 +489,4 @@ git push origin feature/my-feature
 
 ---
 
-# 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-# 👩‍💻 Author
-
-**Anusha Sundar**
-
-B.Tech Computer Science Engineering
-
-AI • Full Stack Development • Backend Engineering
-
----
-
 ## ⭐ If you like this project, consider giving it a star!
