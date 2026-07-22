@@ -191,13 +191,11 @@ Analytics Dashboard
 # 📸 Screenshots
 
 ## 🏠 Home
-
-<img width="1917" height="1153" alt="Screenshot 2026-07-22 104152" src="https://github.com/user-attachments/assets/e43d249c-8515-4a18-a9ae-952865abe116" />
-<img width="1917" height="1151" alt="Screenshot 2026-07-22 104138" src="https://github.com/user-attachments/assets/a4d26420-0f9f-4528-bde2-0714d371129b" />
-<img width="1917" height="1153" alt="Screenshot 2026-07-22 104127" src="https://github.com/user-attachments/assets/e3838678-bf0b-4b8c-bcb9-6081e758ceac" />
-<img width="1917" height="1155" alt="Screenshot 2026-07-22 104113" src="https://github.com/user-attachments/assets/76dafb92-6395-48e0-81d3-cb821214ccaf" />
 <img width="1917" height="1158" alt="Screenshot 2026-07-22 104036" src="https://github.com/user-attachments/assets/6f077866-8dfe-49ac-bd6b-b038b7371ac4" />
-
+<img width="1917" height="1155" alt="Screenshot 2026-07-22 104113" src="https://github.com/user-attachments/assets/76dafb92-6395-48e0-81d3-cb821214ccaf" />
+<img width="1917" height="1153" alt="Screenshot 2026-07-22 104127" src="https://github.com/user-attachments/assets/e3838678-bf0b-4b8c-bcb9-6081e758ceac" />
+<img width="1917" height="1151" alt="Screenshot 2026-07-22 104138" src="https://github.com/user-attachments/assets/a4d26420-0f9f-4528-bde2-0714d371129b" />
+<img width="1917" height="1153" alt="Screenshot 2026-07-22 104152" src="https://github.com/user-attachments/assets/e43d249c-8515-4a18-a9ae-952865abe116" />
 
 ---
 
